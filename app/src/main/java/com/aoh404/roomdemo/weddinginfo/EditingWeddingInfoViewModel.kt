@@ -2,10 +2,8 @@ package com.aoh404.roomdemo.weddinginfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import com.aoh404.roomdemo.WeddingRepository
-import com.aoh404.roomdemo.data.WeddingProfile
+import com.aoh404.roomdemo.model.WeddingProfile
+import com.aoh404.roomdemo.repo.WeddingRepository
 
 class EditingWeddingInfoViewModel(
     private val repository: WeddingRepository

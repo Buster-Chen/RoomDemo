@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.aoh404.roomdemo.R
 import com.aoh404.roomdemo.ViewModelFactory
-import com.aoh404.roomdemo.data.WeddingProfile
+import com.aoh404.roomdemo.model.WeddingProfile
 
 
 class EditingWeddingInfoFragment : Fragment() {
@@ -28,7 +28,7 @@ class EditingWeddingInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = ViewModelProvider(this, ViewModelFactory(view.context))
+        val viewModel = ViewModelProvider(this, ViewModelFactory())
             .get(EditingWeddingInfoViewModel::class.java)
 
         val edtWeddingDate = view.findViewById<EditText>(R.id.edt_wedding_date)

@@ -33,7 +33,7 @@ class WeddingInfoFragment: Fragment() {
             .setOnClickListener { activityViewModel?.navigateToEditingWeddingInfoFragment() }
 
         val tvDate = view.findViewById<TextView>(R.id.tv_date)
-        ViewModelProvider(this, ViewModelFactory(view.context)).get(WeddingViewModel::class.java)
+        ViewModelProvider(this, ViewModelFactory()).get(WeddingViewModel::class.java)
             .loadWeddingProfile()
             .observe(viewLifecycleOwner, Observer {
                 tvDate.text = it?.weddingDate ?: "Some time"

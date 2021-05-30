@@ -10,9 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.aoh404.roomdemo.WeddingViewModel
-import com.aoh404.roomdemo.R
-import com.aoh404.roomdemo.ViewModelFactory
+import com.aoh404.roomdemo.*
 import com.aoh404.roomdemo.weddinginfo.WeddingInfoActivity
 
 class MainFragment : Fragment() {
@@ -34,7 +32,7 @@ class MainFragment : Fragment() {
                 }
 
         val tvDate = view.findViewById<TextView>(R.id.tv_date)
-        ViewModelProvider(this, ViewModelFactory(view.context)).get(WeddingViewModel::class.java)
+        ViewModelProvider(this, ViewModelFactory()).get(WeddingViewModel::class.java)
                 .loadWeddingProfile()
                 .observe(viewLifecycleOwner, Observer {
                     tvDate.text = it?.weddingDate ?: "Some time"
